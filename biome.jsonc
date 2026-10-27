@@ -1,0 +1,92 @@
+{
+    "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+    "vcs": {
+        "enabled": true,
+        "clientKind": "git",
+        "useIgnoreFile": true,
+        "root": ".",
+        "defaultBranch": "main"
+    },
+    "files": {
+        "ignoreUnknown": true,
+        "includes": [
+            "src/**",
+            "!**/dist/",
+            "!**/node_modules/",
+            "!**/docs/",
+            "!**/build/",
+            "!**/packages/",
+            "!**/config/",
+            "!**/coverage/"
+        ]
+    },
+    "formatter": {
+        "enabled": true,
+        "useEditorconfig": false,
+        "formatWithErrors": false,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineEnding": "lf",
+        "lineWidth": 120,
+        "attributePosition": "auto",
+        "bracketSpacing": true
+    },
+    "assist": {
+        "actions": {
+            "source": {
+                "organizeImports": "on"
+            }
+        }
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "preset": "recommended",
+            "style": {
+                "noParameterAssign": "warn",
+                "useAsConstAssertion": "warn",
+                "useDefaultParameterLast": "warn",
+                "useEnumInitializers": "warn",
+                "useSelfClosingElements": "warn",
+                "useSingleVarDeclarator": "warn",
+                "noUnusedTemplateLiteral": "warn",
+                "useNumberNamespace": "warn",
+                "noInferrableTypes": "warn",
+                "noUselessElse": "warn"
+            },
+            "security": {
+                "preset": "recommended",
+                "noGlobalEval": "error"
+            },
+            "correctness": {
+                "noUnusedVariables": "error"
+            }
+        }
+    },
+    "javascript": {
+        "formatter": {
+            "indentStyle": "space",
+            "indentWidth": 4,
+            "lineWidth": 120,
+            "jsxQuoteStyle": "double",
+            "quoteProperties": "asNeeded",
+            "trailingCommas": "all",
+            "semicolons": "always",
+            "arrowParentheses": "asNeeded",
+            "bracketSameLine": false,
+            "quoteStyle": "double",
+            "attributePosition": "auto",
+            "bracketSpacing": true
+        },
+        "parser": {
+            "unsafeParameterDecoratorsEnabled": true
+        }
+    },
+    "json": {
+        "formatter": {
+            "indentStyle": "space",
+            "indentWidth": 4,
+            "trailingCommas": "none"
+        }
+    }
+}
